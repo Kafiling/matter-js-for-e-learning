@@ -1110,7 +1110,7 @@ var Mouse = require('../core/Mouse');
             c.lineTo(body.position.x + (body.position.x - body.positionPrev.x) * 2, body.position.y + (body.position.y - body.positionPrev.y) * 2);
         }
 
-        c.lineWidth = 3;
+        c.lineWidth = 25;
         c.strokeStyle = 'cornflowerblue';
         c.stroke();
     };
