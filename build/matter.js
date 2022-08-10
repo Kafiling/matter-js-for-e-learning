@@ -7135,11 +7135,11 @@ var Mouse = __webpack_require__(13);
                 continue;
 
             c.moveTo(body.position.x, body.position.y);
-            c.lineTo(body.position.x + (body.position.x - body.positionPrev.x) * 2, body.position.y + (body.position.y - body.positionPrev.y) * 2);
+            c.lineTo(body.position.x + (body.position.x - body.positionPrev.x) * 1000, body.position.y + (body.position.y - body.positionPrev.y) * 1000);
         }
 
-        c.lineWidth = 3;
-        c.strokeStyle = 'cornflowerblue';
+        c.lineWidth = 50;
+        c.strokeStyle = 'red';
         c.stroke();
     };
 
