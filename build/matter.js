@@ -7146,7 +7146,7 @@ var Mouse = __webpack_require__(13);
             c.lineTo(body.position.x + (body.position.x - body.positionPrev.x) * 10, body.position.y + (body.position.y - body.positionPrev.y) * 10);
         }
 
-        c.lineWidth = 10;
+        c.lineWidth = 5;
         c.strokeStyle = 'cornflowerblue';
         c.stroke();
     };
@@ -7175,7 +7175,7 @@ var Mouse = __webpack_require__(13);
             c.lineTo(body.position.x + (body.position.x - body.positionPrev.x) * 10, body.position.y);
         }
 
-        c.lineWidth = 10;
+        c.lineWidth = 5;
         c.strokeStyle = 'orange';
         c.stroke();
     };
@@ -7205,7 +7205,7 @@ var Mouse = __webpack_require__(13);
             c.lineTo(body.position.x, body.position.y + (body.position.y - body.positionPrev.y) * 10);
         }
 
-        c.lineWidth = 10;
+        c.lineWidth = 5;
         c.strokeStyle = 'orange';
         c.stroke();
     };
