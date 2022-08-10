@@ -6104,6 +6104,8 @@ var Mouse = __webpack_require__(13);
                 showPerformance: false,
                 showBounds: false,
                 showVelocity: false,
+                showVelocityX: false,
+                showVelocityY: false,
                 showCollisions: false,
                 showSeparations: false,
                 showAxes: false,
@@ -6446,6 +6448,12 @@ var Mouse = __webpack_require__(13);
 
         if (options.showVelocity)
             Render.bodyVelocity(render, bodies, context);
+// Add velocity by axis , Code by Kafiling
+        if (options.showVelocityX)
+            Render.bodyVelocityX(render, bodies, context);
+
+        if (options.showVelocityY)
+            Render.bodyVelocityY(render, bodies, context);
 
         if (options.showIds)
             Render.bodyIds(render, bodies, context);
@@ -7142,6 +7150,66 @@ var Mouse = __webpack_require__(13);
         c.strokeStyle = 'cornflowerblue';
         c.stroke();
     };
+
+// Show Velocity by Axis , Code by Kafiling
+    /**
+     * Draws body velocityX
+     * @private
+     * @method bodyVelocityX
+     * @param {render} render
+     * @param {body[]} bodies
+     * @param {RenderingContext} context
+     */
+     Render.bodyVelocityX = function(render, bodies, context) {
+        var c = context;
+
+        c.beginPath();
+
+        for (var i = 0; i < bodies.length; i++) {
+            var body = bodies[i];
+
+            if (!body.render.visible)
+                continue;
+
+            c.moveTo(body.position.x, body.position.y);
+            c.lineTo(body.position.x + (body.position.x - body.positionPrev.x) * 10, body.position.y);
+        }
+
+        c.lineWidth = 10;
+        c.strokeStyle = 'orange';
+        c.stroke();
+    };
+
+
+
+    /**
+     * Draws body velocityY
+     * @private
+     * @method bodyVelocityY
+     * @param {render} render
+     * @param {body[]} bodies
+     * @param {RenderingContext} context
+     */
+     Render.bodyVelocityY = function(render, bodies, context) {
+        var c = context;
+
+        c.beginPath();
+
+        for (var i = 0; i < bodies.length; i++) {
+            var body = bodies[i];
+
+            if (!body.render.visible)
+                continue;
+
+            c.moveTo(body.position.x, body.position.y);
+            c.lineTo(body.position.x, body.position.y + (body.position.y - body.positionPrev.y) * 10);
+        }
+
+        c.lineWidth = 10;
+        c.strokeStyle = 'orange';
+        c.stroke();
+    };
+
 
     /**
      * Draws body ids
